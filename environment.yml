@@ -1,0 +1,15 @@
+name: geocat_research
+dependencies:
+  - python>=3.10,<3.12
+  - jupyterlab
+  - jupyter-dash 
+  - ipykernel
+  - scipy
+  - numpy
+  - pandas
+  - pyproj # gc_* (great circle calculations)
+  - pip
+  - pip:
+      - ipywidgets
+      - matplotlib
+      - cmaps
