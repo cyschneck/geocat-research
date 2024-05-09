@@ -1,4 +1,6 @@
 name: geocat_research
+channels:
+  - conda-forge
 dependencies:
   - python>=3.10,<3.12
   - jupyterlab
@@ -7,7 +9,8 @@ dependencies:
   - scipy
   - numpy
   - pandas
-  - pyproj # gc_* (great circle calculations)
+  - pyproj #  gc_* (great circle calculations)
+  - uxarray # gc_* (great circle calculations)
   - pip
   - pip:
       - ipywidgets
