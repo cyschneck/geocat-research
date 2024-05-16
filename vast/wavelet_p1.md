@@ -1,6 +1,10 @@
 
 # Signal Processing and Wavelet Analysis: Part One
 
+- Background
+- Fourier Transform - Frequency, not Time
+- Wavelet Transform -Frequency and Time
+
 ## Motivation and Background
 
 Time-series data refers to when data is collected over time, making the order of the data collection and not just the value important. Time-series data can include anything from atmospheric data over a year where the maximum and minimum values corresponds to specific days in a year. 
@@ -8,7 +12,7 @@ Time-series data refers to when data is collected over time, making the order of
 [Graph Temperature over a Year, nino3]
 
 For the purpose of an example, imagine a short piece of music. Each note in the piece can be any note from A to F. Each note varies based on frequency to produce different pitches and notes. Frequency measures the amount of cycles over a single second. A higher frequency is associated with a higher pitch, like an A note, while a lower frequency is associated with a lower pitch, like a C notes.
-
+   
 | Note   | Freq   |
 |--------|--------|
 | A note | 440 hz |
@@ -18,7 +22,6 @@ For the purpose of an example, imagine a short piece of music. Each note in the 
 | E note | 330 hz |
 | F note | 350 hz |
 | G note | 392 hz |
-
 
 [Graph Frequency vs. Pitch]
 
