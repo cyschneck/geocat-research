@@ -37,9 +37,13 @@ Fourier Transform is a tool that can be used to pull out frequencies from raw da
 
 [Graph of Raw Data]
 
-A Fourier Transform of the first lyrics would return the frequency of the notes--E, G, D--with no information about their order or prevalance.
+![fft_1+png](fft_1.png)
 
-[Fourier Transform Graphed Example]
+A Fourier Transform of the first lyrics would return the frequency of the notes with no information about their order or prevalance.
+
+![fft_2+png](fft_2.png)
+
+![fft_3+png](fft_3.png)
 
 The frequency data, known as the frequency domain, contains a great deal of important information. Depending on the resolution of the raw data, Fourier Transform will return precision information about the frequencies present in the data. This precision comes at the cost of any information about the order that the frequencies appear. While Fourier Transform can be used to determine all the frequencies in the signal, it cannot determine the time when those frequencies are present.
 
@@ -92,5 +96,4 @@ Much of the difficultiy in learning wavelets is due to the difficult language th
 
 ## References
 
-["Jingle Bells" Sheet Music](https://www.jamminwithyou.com/jwy-blog/jingle-bells-piano)
 [Note Frequency Chart, Oct 4](https://nickfever.com/music/note-frequencies)
