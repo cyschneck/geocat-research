@@ -3,7 +3,7 @@
 
 - Background
 - Fourier Transform - Frequency, not Time
-- Wavelet Transform -Frequency and Time
+- Wavelet Transform - Frequency and Time
 
 ## Motivation and Background
 
@@ -85,14 +85,22 @@ Because a daughter wavelet will rarely exactly match the frequency of the signal
 Instead of just returning the frequency of notes present in a piece of music, wavelet transform will return the frequency of the notes and the order in which they appear over time. But what about the Unvertainty Principle? It is not possible to known both the precise time and frequency domain of a raw signal. However, wavelets overcome this by returning both with a reduced precision in the resolution of frequency. Wavelets and wavelet transforms can be used to track both the frequency and the time in which a frequency is present. Wavelets are a time-frequency representation, and are capable of providing both information about the frequency of a signal as well as the time it appeared.
 
 <p align="center">
-  <img src="jingle_bells_sample.png" />
+  <img src="jingle_bells_wavelet.png" />
 </p>
 
 This is ideal for analysis time-series data. Returning to the music example, a wavelet transform would return not only the frequencies of a note (with less precision and a large possible range) but also the time step in the piece when it appeared.
 
 <p align="center">
-  <img src="jingle_bells_wavelet.png" />
+  <img src="jingle_bells_wavelet_freq.png" />
 </p>
+
+<p align="center">
+  <img src="jingle_bells_wavelet_freq2.png" />
+</p>
+
+The larger possible range in frrequency values (along the y-axis) represent the lose in frequency resolution, however, the wavelet preserves the order that the frequency occurs (the time step along the x-axis)
+
+[Frequency Lines]
 
 ## Wavelet Analysis Review
 
