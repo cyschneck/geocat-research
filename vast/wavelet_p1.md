@@ -12,7 +12,7 @@ Time-series data refers to when data is collected over time, making the order of
 [Graph Temperature over a Year, nino3]
 
 For the purpose of an example, imagine a short piece of music. Each note in the piece can be any note from A to F. Each note varies based on frequency to produce different pitches and notes. Frequency measures the amount of cycles over a single second. A higher frequency is associated with a higher pitch, like an A note, while a lower frequency is associated with a lower pitch, like a C notes.
-   
+
 | Note   | Freq   |
 |--------|--------|
 | A note | 440 hz |
@@ -35,14 +35,21 @@ Fourier Transform is a tool that can be used to pull out frequencies from raw da
 
 [Graph of Raw Data]
 
-![fft_1+png](fft_1.png)
+<p align="center">
+  <img src="fft_1.png" />
+</p>
 
 A Fourier Transform of the first lyrics would return the frequency of the notes with no information about their order or prevalance.
 
-![fft_2+png](fft_2.png)
 
-![fft_3+png](fft_3.png)
+<p align="center">
+  <img src="fft_2.png" />
+</p>
 
+
+<p align="center">
+  <img src="fft_3.png" />
+</p>
 The frequency data, known as the frequency domain, contains a great deal of important information. Depending on the resolution of the raw data, Fourier Transform will return precision information about the frequencies present in the data. This precision comes at the cost of any information about the order that the frequencies appear. While Fourier Transform can be used to determine all the frequencies in the signal, it cannot determine the time when those frequencies are present.
 
 There will always be a compromise between the precision of the time domain and the frequency domain. Knowing more precise information about the exact frequnecy of a signal means that less information can be known about the time and order of the data and the reverse is true. Fourier Transform prioritizes precision of the frequency domain at the cost of information about the time and order.
