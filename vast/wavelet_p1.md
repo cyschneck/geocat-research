@@ -23,8 +23,6 @@ For the purpose of an example, imagine a short piece of music. Each note in the 
 | F note | 350 hz |
 | G note | 392 hz |
 
-[Graph Frequency vs. Pitch]
-
 However, just graphing that a B and a D note appear in the piece does not encapulsate all the information. What is the order? BDDB is very different from DDDDBD. This is the importance of time and order in data that is lost in first passes of signal processing with tools like Fourier Transform.
 
 ### Advantages (and Disadvantages) of Fourier Transform
