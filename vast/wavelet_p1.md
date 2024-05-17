@@ -33,24 +33,29 @@ Fourier Transform is a tool that can be used to pull out frequencies from raw da
 
 "Jingle Bells, Jingle Bells, Jingle All the Way" as EEE EEE EGCDE
 
-[Graph of Raw Data]
+<p align="center">
+  <img src="jingle_bells_sample.png" />
+</p>
+
+A Fourier Transform of the first lyrics would return the frequency of the notes with no information about their order.
 
 <p align="center">
   <img src="fft_1.png" />
 </p>
 
-A Fourier Transform of the first lyrics would return the frequency of the notes with no information about their order or prevalance.
-
+It is clear that this piece of music has only a few notes, predominantly made up of the E note 
 
 <p align="center">
   <img src="fft_2.png" />
 </p>
 
+The Fourier Transform of a song will display the frequency of each note and the amplitude indirectly will demonstrate how prevalent a note is. However, for data that depends on time (like when a note appears in a song), this is only half the story.
 
 <p align="center">
   <img src="fft_3.png" />
 </p>
-The frequency data, known as the frequency domain, contains a great deal of important information. Depending on the resolution of the raw data, Fourier Transform will return precision information about the frequencies present in the data. This precision comes at the cost of any information about the order that the frequencies appear. While Fourier Transform can be used to determine all the frequencies in the signal, it cannot determine the time when those frequencies are present.
+
+Fourier Transform returns frequency data, known as the frequency domain, contains a great deal of important information. Depending on the resolution of the raw data, Fourier Transform will return precision information about the frequencies present in the data. This precision comes at the cost of any information about the order that the frequencies appear. While Fourier Transform can be used to determine all the frequencies in the signal, it cannot determine the time when those frequencies are present.
 
 There will always be a compromise between the precision of the time domain and the frequency domain. Knowing more precise information about the exact frequnecy of a signal means that less information can be known about the time and order of the data and the reverse is true. Fourier Transform prioritizes precision of the frequency domain at the cost of information about the time and order.
 
@@ -61,8 +66,6 @@ Fourier Transform remains one of the most popular and common methods to analysis
 #### Porque los dos? Heisenberg's Uncertainty Principle!
 
 Heisenberg's Uncertainty Principle states that it is impossible to know the exact frequency and the exact time that a signal occurs. Any tool for signal processing will always be a compromise between a high resolution in time at the cost of low precision in frequency or a high precision in frequency with a low resolution in time.
-
-[Uncertainty Diagram]
 
 One potential solution to Fourier Transform's lack of time information is to cut the data into smaller and smaller windows where individual Fourier Transform's can be used. Theortiically, by doing this, the Fourier Transform will return the frequencies present, but with a small enough window, it can spoof the precision of when the frequency occurs by narrowing the possible range into the window. This is known as a Short Time Fourier Transform (sometimes referred to as Windowed Fourier Transform). However, this just leads to the next problem: what range should the window be? And what about a signal that needs a longer period to become apparent. A small window is more suspsectible to frequencies being lost in the background noise. A small enough window to be precise with time would often be too small of a window to get a high precision in frequency (the strength of Fourier Transforms to begin with).
 
@@ -81,11 +84,15 @@ Because a daughter wavelet will rarely exactly match the frequency of the signal
 
 Instead of just returning the frequency of notes present in a piece of music, wavelet transform will return the frequency of the notes and the order in which they appear over time. But what about the Unvertainty Principle? It is not possible to known both the precise time and frequency domain of a raw signal. However, wavelets overcome this by returning both with a reduced precision in the resolution of frequency. Wavelets and wavelet transforms can be used to track both the frequency and the time in which a frequency is present. Wavelets are a time-frequency representation, and are capable of providing both information about the frequency of a signal as well as the time it appeared.
 
-[Wavelet Example]
+<p align="center">
+  <img src="jingle_bells_sample.png" />
+</p>
 
 This is ideal for analysis time-series data. Returning to the music example, a wavelet transform would return not only the frequencies of a note (with less precision and a large possible range) but also the time step in the piece when it appeared.
 
-[Musical Example]
+<p align="center">
+  <img src="jingle_bells_wavelet.png" />
+</p>
 
 ## Wavelet Analysis Review
 
