@@ -156,7 +156,30 @@ wavelet_coeffs, freqs = pywt.cwt(signal_data, scales, wavelet = "morl")
 `wavelet_coeffs` is a complex number with a real and an imaginary number (1 + 2i). The power spectrum plots the real component of the complex number. The real component represents the magntiude of the wavelet coefficient displayed as the absolute value of the coefficients squared
 
 ```
+plt.style.use('dark_background')
+fig, ax = plt.subplots(figsize=(10, 10))
 
+wavelet_mother = "morl" # morlet
+
+# scale determinse how squished or stretched a wavelet is
+scales = np.arange(1, 41)
+wavelet_coeffs, freqs = pywt.cwt(signal_data, scales, wavelet = wavelet_mother)
+
+# Plot scalogram
+# compare the power spectrum (absolute value squared)
+power = np.power((abs(wavelet_coeffs)), 2)
+plt.imshow(power, vmax=(power).max(), vmin=(power).min(), cmap="coolwarm", aspect="auto")
+
+# Convert Scales to Frequency
+y_tickrange = [round(pywt.scale2frequency(wavelet_mother, scale)*sample_rate,2) for scale in scales]
+plt.yticks(scales, y_tickrange)
+
+plt.title("Frequency at each Time Step")
+plt.xlabel("Time (Microseconds)")
+plt.ylabel("Frequency (Hz)")
+plt.colorbar()
+plt.savefig("p2_jingle_bells_wavelet.png")
+plt.show()
 ```
 <p align="center">
   <img src="p2_jingle_bells_wavelet.png" />
@@ -164,23 +187,96 @@ wavelet_coeffs, freqs = pywt.cwt(signal_data, scales, wavelet = "morl")
 
 Overlaid with note frequencies
 ```
+sample_rate, signal_data = wavfile.read('jingle_bells.wav')
+fig, ax = plt.subplots(figsize=(10, 10))
 
+# note frequency in hz
+rate = 1/sample_rate
+a_note = pywt.frequency2scale(wavelet_mother, a_freq*rate)
+plt.axhline(y=a_note, color='yellow', linestyle='--', label='A')
+b_note = pywt.frequency2scale(wavelet_mother, b_freq*rate)
+plt.axhline(y=b_note, color="maroon", linestyle='--', label='B')
+c_note = pywt.frequency2scale(wavelet_mother, c_freq*rate)
+plt.axhline(y=c_note, color='lightgreen', linestyle='--', label='C')
+d_note = pywt.frequency2scale(wavelet_mother, d_freq*rate)
+plt.axhline(y=d_note, color='blue', linestyle='--', label='D')
+e_note = pywt.frequency2scale(wavelet_mother, e_freq*rate)
+plt.axhline(y=e_note, color='cyan', linestyle='--', label='E')
+f_note = pywt.frequency2scale(wavelet_mother, f_freq*rate)
+plt.axhline(y=f_note, color='fuchsia', linestyle='--', label='F')
+g_note = pywt.frequency2scale(wavelet_mother, g_freq*rate)
+plt.axhline(y=g_note, color='red', linestyle='--', label='G')
+
+wavelet_mother = "morl" # morlet
+
+# scale determines how squished or stretched a wavelet is
+scales = np.arange(1, 41)
+wavelet_coeffs, freqs = pywt.cwt(signal_data, scales, wavelet = wavelet_mother)
+
+# Plot scalogram
+# compare the power spectrum (absolute value squared)
+power = np.power((abs(wavelet_coeffs)), 2)
+plt.imshow(power, vmax=(power).max(), vmin=(power).min(), cmap="coolwarm", aspect="auto")
+
+# Convert Scales to Frequency
+y_tickrange = [round(pywt.scale2frequency(wavelet_mother, scale)*sample_rate,2) for scale in scales]
+plt.yticks(scales, y_tickrange)
+
+plt.title("Frequency at each Time Step")
+plt.xlabel("Time (Microseconds)")
+plt.ylabel("Frequency (Hz)")
+plt.colorbar()
+plt.legend()
+plt.savefig("p2_jingle_bells_wavelet_freq1.png")
+plt.show()
 ```
 <p align="center">
   <img src="p2_jingle_bells_wavelet_freq1.png" />
 </p>
 
+Notes that appear to match the center range of the frequencies best
 ```
+sample_rate, signal_data = wavfile.read('jingle_bells.wav')
+fig, ax = plt.subplots(figsize=(10, 10))
 
+# note frequency in hz
+rate = 1/sample_rate
+c_note = pywt.frequency2scale(wavelet_mother, c_freq*rate)
+plt.axhline(y=c_note, color='lightgreen', linestyle='--', label='C')
+d_note = pywt.frequency2scale(wavelet_mother, d_freq*rate)
+plt.axhline(y=d_note, color='blue', linestyle='--', label='D')
+e_note = pywt.frequency2scale(wavelet_mother, e_freq*rate)
+plt.axhline(y=e_note, color='cyan', linestyle='--', label='E')
+f_note = pywt.frequency2scale(wavelet_mother, f_freq*rate)
+plt.axhline(y=g_note, color='red', linestyle='--', label='G')
+
+wavelet_mother = "morl" # morlet
+
+# scale determines how squished or stretched a wavelet is
+scales = np.arange(1, 41)
+wavelet_coeffs, freqs = pywt.cwt(signal_data, scales, wavelet = wavelet_mother)
+
+# Plot scalogram
+# compare the power spectrum (absolute value squared)
+power = np.power((abs(wavelet_coeffs)), 2)
+plt.imshow(power, vmax=(power).max(), vmin=(power).min(), cmap="coolwarm", aspect="auto")
+
+# Convert Scales to Frequency
+y_tickrange = [round(pywt.scale2frequency(wavelet_mother, scale)*sample_rate,2) for scale in scales]
+plt.yticks(scales, y_tickrange)
+
+plt.title("Frequency at each Time Step")
+plt.xlabel("Time (Microseconds)")
+plt.ylabel("Frequency (Hz)")
+plt.colorbar()
+plt.legend()
+plt.savefig("p2_jingle_bells_wavelet_freq2.png")
+plt.show()
 ```
 
 <p align="center">
   <img src="p2_jingle_bells_wavelet_freq2.png" />
 </p>
-
-## Phase Spectrum
-
-`wavelet_coeffs` is a complex number with a real and an imaginary number (1 + 2i). While less commonly used in frequency and signal analysis, the phase spectrum plots the imaginary component of the complex number. The imaginary component represents the direction of the wavelet coefficient.
 
 ## More Readings:
 
