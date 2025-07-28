@@ -48,3 +48,7 @@ An example of the Jupyter output:
 ## Great Circles
 
 [NCL gc_* functions](https://github.com/NCAR/geocat-comp/issues/31) for Great Circle Calculations
+
+## Madden–Julian Oscillation (MJO)
+
+[NCL mjo_* functions](https://github.com/NCAR/geocat-applications/issues/223) for MJO calculation and plotting
