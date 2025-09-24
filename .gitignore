@@ -1,5 +1,6 @@
 # ignore data file
 mjo/data/QBOi.EXP1.AMIP.001/*
+mjo/model/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
