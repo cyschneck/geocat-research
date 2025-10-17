@@ -1,5 +1,5 @@
 # ignore data file
-mjo/data/QBOi.EXP1.AMIP.001/*
+mjo/data/*
 mjo/model/*
 
 # Byte-compiled / optimized / DLL files
