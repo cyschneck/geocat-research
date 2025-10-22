@@ -12,6 +12,7 @@ dependencies:
   - pandas
   - pyproj #  gc_* (great circle calculations)
   - uxarray # gc_* (great circle calculations)
+  - xeofs # mjo
   - pip
   - pip:
       - ipywidgets
