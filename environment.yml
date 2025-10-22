@@ -7,6 +7,7 @@ dependencies:
   - jupyter-dash 
   - ipykernel
   - geocat-comp # mjo
+  - geocat-viz # mjo
   - scipy
   - numpy
   - pandas
