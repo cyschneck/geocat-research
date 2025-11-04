@@ -63,3 +63,11 @@ wf = mjo_wavenum_freq_season(x, date, nameSeason, False)
 ;   _FillValue :	1e+20
 
 print(wf)
+
+; ------------- plotting -----------------------
+
+pltDir = "mjo_output/"
+pltType = "png"
+pltName = "mjo_wavenum_freq_season_plot"
+mjo_wavenum_freq_season_plot(wf, nameSeason, pltDir, pltType, pltName, True)
+print("plot saved: " + pltName)
