@@ -65,6 +65,7 @@ wf = mjo_wavenum_freq_season(x, date, nameSeason, False)
 print(wf)
 
 ; ------------- plotting -----------------------
+; https://www.ncl.ucar.edu/Applications/Scripts/mjoclivar_10.ncl
 
 pltDir = "mjo_output/"
 pltType = "png"
