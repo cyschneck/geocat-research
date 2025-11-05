@@ -46,7 +46,7 @@ x = dim_avg_n_Wrap(X, 1)
 
 ; ------------- wavenumber -----------------------
 
-nameSeason = "winter" ; "winter" or "summer"
+nameSeason = "winter" ; "winter" or "summer" or "annual"
 wf = mjo_wavenum_freq_season(x, date, nameSeason, False)
 
 ; printVarSummary(wf)
