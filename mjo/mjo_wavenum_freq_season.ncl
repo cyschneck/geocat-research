@@ -67,8 +67,8 @@ print(wf)
 ; ------------- plotting -----------------------
 ; https://www.ncl.ucar.edu/Applications/Scripts/mjoclivar_10.ncl
 
-pltDir = "mjo_output/"
-pltType = "png"
-pltName = "mjo_wavenum_freq_season_plot"
-mjo_wavenum_freq_season_plot(wf, nameSeason, pltDir, pltType, pltName, True)
-print("plot saved: " + pltName)
+; pltDir = "mjo_output/"
+; pltType = "png"
+; pltName = "mjo_wavenum_freq_season_plot"
+; mjo_wavenum_freq_season_plot(wf, nameSeason, pltDir, pltType, pltName, True)
+; print("plot saved: " + pltName)
