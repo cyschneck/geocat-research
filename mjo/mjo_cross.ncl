@@ -53,25 +53,17 @@ segLen = 256        ; 256 time steps (256 days in daily data)
 segOverLap = 50     ; 15 time steps of overlap
 
 mc =  mjo_cross (x, y, segLen, segOverLap, False)
-print(mc)
+;print(mc)
 
-printVarSummary(mc)
-;Variable: mc
-;Type: double
-;Total Size: 4771968 bytes
-;            596496 values
-;Number of Dimensions: 3
-;Dimensions and sizes:	[var | 16] x [freq | 129] x [wave | 289]
-;Coordinates: 
-;            freq: [ 0..0.5]
-;            wave: [-144..144]
-;Number Of Attributes: 9
-;  _FillValue :	1e+20
-;  varName :	<ARRAY of 16 elements>
-;  segmentLength :	256
-;  segmentOverLap :	50
-;  segmentRepeat :	206
-;  number_of_segments :	17
-;  dof :	45.339
-;  prob :	( 0.8, 0.85, 0.9, 0.925, 0.95, 0.99 )
-;  prob_coh2 :	( 0.007943451, 0.02954906, 0.1019666, 0.1846326, 0.3290648, 0.8042979 )
+;printVarSummary(mc)
+
+; ------------- plotting -----------------------
+; https://www.ncl.ucar.edu/Applications/Scripts/mjoclivar_11.ncl
+
+; pltDir = "mjo_output/"
+; pltType = "png"
+; pltName = "mjo_cross"
+; opt = True
+; opt@txString = "mjo_cross Example: "+ latS + "S-" + latN + "N"
+; mjo_cross_plot(mc, pltDir, pltType, pltName, opt)
+; print("plot saved: " + pltName)
