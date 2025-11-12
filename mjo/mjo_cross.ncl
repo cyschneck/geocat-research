@@ -53,7 +53,7 @@ segLen = 256        ; 256 time steps (256 days in daily data)
 segOverLap = 50     ; 15 time steps of overlap
 
 mc =  mjo_cross (x, y, segLen, segOverLap, False)
-;print(mc)
+print(mc)
 
 ;printVarSummary(mc)
 
