@@ -24,8 +24,54 @@ u850_vName = "U850" ; name fo variable in the file
 f_x = addfile(WORKDIR + diri + flut_filename, "r")
 f_y = addfile(WORKDIR + diri + u850_filename, "r")
 
-; Extract variables
-x = f_x->$flut_vName$
-y = f_y->$u850_vName$
+; ------------- Slice Input -----------------------
 
-print("finished")
+latS = -15. ; lat/lon range
+latN = 15.  ; lat/lon rnage
+
+twStrt = 19790101 ; time window start
+twLast = 19811231 ; time window end
+
+date_x = cd_calendar(f_x->time, -2) ; YYYYMMDD
+iStrt  = ind(date_x.eq.twStrt)      ; index of start date
+iLast  = ind(date_x.eq.twLast)      ; index of end date
+x = f_x->$flut_vName$(iStrt:iLast,{latS:latN},:)
+delete(date_x)
+
+date_y = cd_calendar(f_y->time, -2) ; YYYYMMDD
+iStrt  = ind(date_y.eq.twStrt)      ; index of start date
+iLast  = ind(date_y.eq.twLast)      ; index of end date
+y = f_y->$u850_vName$(iStrt:iLast,{latS:latN},:)
+delete(date_y)
+
+;printVarSummary(x)
+;printVarSummary(y)
+
+; ------------- Input with MJO Cross Parameters -----------------------
+
+segLen = 256        ; 256 time steps (256 days in daily data)
+segOverLap = 50     ; 15 time steps of overlap
+
+mc =  mjo_cross (x, y, segLen, segOverLap, False)
+print(mc)
+
+printVarSummary(mc)
+;Variable: mc
+;Type: double
+;Total Size: 4771968 bytes
+;            596496 values
+;Number of Dimensions: 3
+;Dimensions and sizes:	[var | 16] x [freq | 129] x [wave | 289]
+;Coordinates: 
+;            freq: [ 0..0.5]
+;            wave: [-144..144]
+;Number Of Attributes: 9
+;  _FillValue :	1e+20
+;  varName :	<ARRAY of 16 elements>
+;  segmentLength :	256
+;  segmentOverLap :	50
+;  segmentRepeat :	206
+;  number_of_segments :	17
+;  dof :	45.339
+;  prob :	( 0.8, 0.85, 0.9, 0.925, 0.95, 0.99 )
+;  prob_coh2 :	( 0.007943451, 0.02954906, 0.1019666, 0.1846326, 0.3290648, 0.8042979 )

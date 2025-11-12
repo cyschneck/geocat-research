@@ -44,7 +44,7 @@ date = cd_calendar(time, -2) ; convert time values to YYYYMMDD
 
 x = dim_avg_n_Wrap(X, 1)
 
-; ------------- wavenumber -----------------------
+; ------------- wavenumber-freq -----------------------
 
 nameSeason = "winter" ; "winter" or "summer" or "annual"
 wf = mjo_wavenum_freq_season(x, date, nameSeason, False)
