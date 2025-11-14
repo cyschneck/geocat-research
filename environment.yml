@@ -14,6 +14,7 @@ dependencies:
   - pyproj #  gc_* (great circle calculations)
   - uxarray # gc_* (great circle calculations)
   - xeofs # mjo
+  - xrft # mjo: FFT
   - pip
   - pip:
       - ipywidgets
