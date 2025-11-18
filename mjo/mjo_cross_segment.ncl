@@ -49,11 +49,13 @@ delete(date_y)
 
 ; ------------- Input with MJO Cross Segment Parameters -----------------------
 cross_spectrum =  mjo_cross_segment (x, y, 0)
-print(cross_spectrum)
+; print(cross_spectrum)
 
 ;printVarSummary(cross_spectrum()
 
 ; ------------- Access Power Spectrum------------------ -----------------------
 
-; power_spectrum_x = cross_spectrum((0,:,:)
+; power_spectrum_x = cross_spectrum(0,:,:)
+; print(power_spectrum_x) ; ncl -n mjo_cross_segment.ncl >> mjo_output/mjo_cross_segment_power_spectrum_x_output.txt
 ; phase_spectrum_y_asymmetric = cross_spectrum(11,:,:)
+; print(phase_spectrum_y_asymmetric) ; ncl -n mjo_cross_segment.ncl >> mjo_output/mjo_cross_segment_phase_spectrum_y_asymmetric_output.txt
