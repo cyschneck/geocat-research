@@ -48,12 +48,14 @@ wgty = cos(0.01745329*lat) ; MJO Clivar specify cos(pi/180 * lat)
 
 ; ------------- Calculate and Plot MJO Spectra Parameters -----------------------
 
-print({latS(nr):latN(nr)})
+; -- Ignore: testing --
+;print(latS(0))
+;print(latN(0)	)
 ;print(wgty)
 
 ;print(wgty({latS(0):latN(0)}))
 
-nRegion = dimsizes(nameRegion)
+;nRegion = dimsizes(nameRegion)
 ;print(latS(0))
 ;print(latN(0))
 ;do nr=0, nRegion-1
@@ -61,5 +63,6 @@ nRegion = dimsizes(nameRegion)
 ;wt = wgty({latS(nr):latN(nr)})
 ;print(wt)
 ;end do
+; ------------
 
-;mjo_spectra(X, date, wgty, latS, latN, lonL, lonR, nameRegion, "./", "png", "mjo_spectra", False)
+mjo_spectra(X, date, wgty, latS, latN, lonL, lonR, nameRegion, "./", "png", "mjo_spectra", False)
