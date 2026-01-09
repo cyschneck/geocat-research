@@ -38,31 +38,16 @@ delete(date)
 X = f->$vName$(iStrt:iLast,:,:)
 
 time = X&time
-date = cd_calendar(f->time, -2) ; YYYYMMDD
+date = cd_calendar(time, -2) ; YYYYMMDD
 
 ; ------------- Input with MJO Cross Parameters -----------------------
 
 nameRegion = (/ "IO", "WP" /)
 lat = f->lat
 wgty = cos(0.01745329*lat) ; MJO Clivar specify cos(pi/180 * lat)
+copy_VarCoords(lat, wgty)
 
 ; ------------- Calculate and Plot MJO Spectra Parameters -----------------------
 
-; -- Ignore: testing --
-;print(latS(0))
-;print(latN(0)	)
-;print(wgty)
-
-;print(wgty({latS(0):latN(0)}))
-
-;nRegion = dimsizes(nameRegion)
-;print(latS(0))
-;print(latN(0))
-;do nr=0, nRegion-1
-;x = X(:,{latS(nr):latN(nr)}, {lonL(nr):lonR(nr)})
-;wt = wgty({latS(nr):latN(nr)})
-;print(wt)
-;end do
-; ------------
-
-mjo_spectra(X, date, wgty, latS, latN, lonL, lonR, nameRegion, "./", "png", "mjo_spectra", False)
+; ignore error: "sh: 1: convert: not found"
+mjo_spectra(X, date, wgty, latS, latN, lonL, lonR, nameRegion, "mjo_output/", "png", "mjo_spectra", False)
