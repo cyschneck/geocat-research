@@ -26,3 +26,5 @@ plot = mjo_phase_background(wks, opt)      ; generic phase space background
 
 draw(plot)
 frame(wks)
+
+; note: appears to be a bug in mjo_phase_background() whihch produces additional whitespace around graph
