@@ -27,4 +27,15 @@ plot = mjo_phase_background(wks, opt)      ; generic phase space background
 draw(plot)
 frame(wks)
 
-; note: appears to be a bug in mjo_phase_background() whihch produces additional whitespace around graph
+; note: appears to be a bug in mjo_phase_background() which produces additional whitespace around graph
+
+; conda install conda-forge::imagemagick
+
+;if (pltType.eq."png") then
+;  if (isatt(opt,"pltConvert")) then
+;    pltConvert = opt@pltConvert    ; convert options
+;  else
+;    pltConvert = "-trim +repage -border 8 -bordercolor white"
+;  end if
+;  system("convert "+pltConvert+" "+pltPath+".png "+pltPath+".png")
+; end if
