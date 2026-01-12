@@ -1,5 +1,5 @@
 ;******************************************************
-; Example script for working with "mjo_phase_background "
+; Example script for working with "mjo_phase_background"
 ; ncl mjo_phase_background.ncl
 ;******************************************************
 ; These files are loaded by default in NCL V6.2.0 and newer
