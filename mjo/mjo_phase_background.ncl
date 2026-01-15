@@ -12,7 +12,7 @@ load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/diagnostics_cam.ncl"
 
 ; ------------- Plot Phase Background ------------------------
 
-pltPath = "mjo_output/" + "mjo_phase_background"
+pltPath = "mjo_output/" + "mjo_phase_background_radius_1"
 pltType = "png" ; PNG file
 pltType@wkWidth  = 1500
 pltType@wkHeight = 1500
@@ -21,6 +21,7 @@ wks  = gsn_open_wks(pltType, pltPath) ; open workstation
 
 opt = True
 opt@tiMainString = "MJO Phase: 15N-15S: Start-End" ; plot title
+opt@radius=1
 
 plot = mjo_phase_background(wks, opt)      ; generic phase space background
 
