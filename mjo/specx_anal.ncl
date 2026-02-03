@@ -33,7 +33,13 @@ iLast = ind(date.eq.twLast)
 delete(date)
 
 X = f->$vName$(iStrt:iLast,{latS:latN},:)
-printVarSummary(X)
+;printVarSummary(X)
+
+; ------------ Convert Data to 1D Array --------------
+
+lat = X&lat
+wgty = cos(0.01745329*lat) ; MJO Clivar specify cos(pi/180 * lat)
+xts  = wgt_areaave_Wrap(X, wgty, 1., 0)
 
 ; ------------- Spectral Analysis --------------------
 
@@ -41,6 +47,6 @@ d = 0      ; detrending (remove series mean)
 sm = 0     ; smooth periodogram (no smoothing, 0 = pure periodogram)
 pct = 0.1  ; percent tapered, 10% (common)
 
-spectra_degrees_of_freedom = specx_anal(X, d, sm, pct)
+spectra_degrees_of_freedom = specx_anal(xts, d, sm, pct)
 print(spectra_degrees_of_freedom)
 
