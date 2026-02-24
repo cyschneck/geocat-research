@@ -15,6 +15,7 @@ dependencies:
   - uxarray # gc_* (great circle calculations)
   - xeofs # mjo
   - xrft # mjo: FFT
+  - cmap # mjo: NCL colors in mjo_wavenum_freq_season_plot
   #- iris # mjo: mjo_wavenumber
   - pip
   - pip:
