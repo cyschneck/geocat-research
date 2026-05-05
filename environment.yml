@@ -22,3 +22,5 @@ dependencies:
       - ipywidgets
       - matplotlib
       - cmaps
+      - skyborn # curly vectors
+      - ultraplot # curly vectors
