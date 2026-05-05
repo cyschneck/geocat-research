@@ -16,6 +16,7 @@ dependencies:
   - xeofs # mjo
   - xrft # mjo: FFT
   - cmap # mjo: NCL colors in mjo_wavenum_freq_season_plot
+  - geocat-datafiles # curly vectors
   #- iris # mjo: mjo_wavenumber
   - pip
   - pip:
